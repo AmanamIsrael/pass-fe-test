@@ -25,15 +25,15 @@ export default {
 section.body-container {
   max-width: 1000px;
   margin: 0 auto;
-  border-radius: 0.5rem;
-  padding: 0 2rem;
-  padding-top: 1rem;
   margin-top: 1rem;
 
   div.layout {
     background-color: $white;
     min-height: 750px;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    padding: 0 2rem;
+    padding-top: 1rem;
+    border-radius: 0.5rem;
   }
 }
 q-layout {

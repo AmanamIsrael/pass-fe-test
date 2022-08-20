@@ -9,13 +9,35 @@
           no-caps
           indicator-color="primary"
           class="text-gray"
+          outside-arrows
+          mobile-arrows
           active-color="primary"
         >
-          <q-tab icon="dashboard" name="dashboard" label="Dashboard" />
-          <q-tab icon="description" name="invoices" label="Invoices" />
-          <q-tab icon="balance" name="wallet" label="Wallet" />
-          <q-tab icon="assessment" name="activity" label="Activity" />
-          <q-tab icon="phone" name="help" label="Help" />
+          <q-route-tab
+            to="/"
+            icon="dashboard"
+            name="dashboard"
+            label="Dashboard"
+          />
+          <q-route-tab
+            to="/invoices"
+            icon="description"
+            name="invoices"
+            label="Invoices"
+          />
+          <q-route-tab
+            to="/wallet"
+            icon="balance"
+            name="wallet"
+            label="Wallet"
+          />
+          <q-route-tab
+            to="/activity"
+            icon="assessment"
+            name="activity"
+            label="Activity"
+          />
+          <q-route-tab to="/help" icon="phone" name="help" label="Help" />
         </q-tabs>
       </div>
     </section>

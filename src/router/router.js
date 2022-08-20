@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import DashboardPage from "../pages/DashboardPage.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -8,8 +7,31 @@ const router = createRouter({
       path: "/",
       name: "dashboard",
       title: "Dashboard",
-      component: DashboardPage,
-      // children: [],
+      component: () => import("@/pages/DashboardPage.vue"),
+    },
+    {
+      path: "/activity",
+      name: "activity",
+      title: "Activity",
+      component: () => import("@/pages/ActivityPage.vue"),
+    },
+    {
+      path: "/invoices",
+      name: "invoices",
+      title: "Invoices",
+      component: () => import("@/pages/InvoicesPage.vue"),
+    },
+    {
+      path: "/help",
+      name: "help",
+      title: "Help",
+      component: () => import("@/pages/HelpPage.vue"),
+    },
+    {
+      path: "/wallet",
+      name: "wallet",
+      title: "Wallet",
+      component: () => import("@/pages/WalletPage.vue"),
     },
   ],
 });
