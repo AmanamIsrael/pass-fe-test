@@ -1,6 +1,6 @@
 <template>
-  <q-layout>
-    <nav>
+  <nav>
+    <section>
       <div class="logo">Payday.</div>
       <div class="tabs-container">
         <q-tabs
@@ -18,8 +18,8 @@
           <q-tab icon="phone" name="help" label="Help" />
         </q-tabs>
       </div>
-    </nav>
-  </q-layout>
+    </section>
+  </nav>
 </template>
 
 <script>
@@ -42,21 +42,26 @@ nav {
   background-color: $white;
   color: $dark;
   padding: 1rem;
-  display: flex;
-  align-items: center;
 
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: $primary;
-    margin-right: 1rem;
-  }
-
-  .tabs-container {
-    flex: 1;
+  section {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $primary;
+      margin-right: 1rem;
+    }
+
+    .tabs-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }
 </style>
