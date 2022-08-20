@@ -1,7 +1,7 @@
 <template>
   <div class="breadcrumbs">
     <span class="header">
-      {{ $route.name.toUpperCase() }}
+      {{ $route.name?.toUpperCase() }}
     </span>
     <span>
       {{ $route.name === "invoices" ? "/edit invoice (INV-2022-010)" : "" }}
@@ -14,7 +14,7 @@ export default {};
 <style scoped lang="scss">
 .breadcrumbs {
   display: flex;
-  color: $gray;
+  color: $grey;
   font-weight: 500;
 
   .header {

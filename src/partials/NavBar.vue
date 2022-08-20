@@ -8,7 +8,6 @@
           v-model="tab"
           no-caps
           indicator-color="primary"
-          class="text-gray"
           outside-arrows
           mobile-arrows
           active-color="primary"

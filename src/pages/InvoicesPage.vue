@@ -1,7 +1,10 @@
 <template>
-  <p>Invoices Page</p>
+  <div>
+    <InvoiceInfo />
+  </div>
 </template>
 <script>
-export default {};
+import InvoiceInfo from "@/components/invoices/InvoiceInfo.vue";
+export default { components: { InvoiceInfo } };
 </script>
 <style lang=""></style>
