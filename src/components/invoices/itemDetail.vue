@@ -9,6 +9,7 @@
       <q-btn icon="tune" flat size="md" label="Customize" />
     </div>
     <DetailsTable />
+    <q-separator />
   </div>
 </template>
 <script>

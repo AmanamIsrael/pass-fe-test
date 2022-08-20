@@ -74,7 +74,7 @@ export default {
 <style lang="scss" scoped>
 table {
   border-collapse: collapse;
-  margin: 0;
+  margin: 1rem 0;
   padding: 0;
   width: 100%;
   table-layout: fixed;
