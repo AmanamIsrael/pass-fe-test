@@ -1,0 +1,62 @@
+<template>
+  <q-layout>
+    <nav>
+      <div class="logo">Payday.</div>
+      <div class="tabs-container">
+        <q-tabs
+          inline-label
+          v-model="tab"
+          no-caps
+          indicator-color="primary"
+          class="text-gray"
+          active-color="primary"
+        >
+          <q-tab icon="dashboard" name="dashboard" label="Dashboard" />
+          <q-tab icon="description" name="invoices" label="Invoices" />
+          <q-tab icon="balance" name="wallet" label="Wallet" />
+          <q-tab icon="assessment" name="activity" label="Activity" />
+          <q-tab icon="phone" name="help" label="Help" />
+        </q-tabs>
+      </div>
+    </nav>
+  </q-layout>
+</template>
+
+<script>
+import { defineComponent } from "@vue/runtime-core";
+import { ref } from "vue";
+
+export default defineComponent({
+  name: "NavBar",
+  data() {
+    return {
+      tab: ref("invoices"),
+    };
+  },
+});
+</script>
+
+<style scoped lang="scss">
+nav {
+  width: 100%;
+  background-color: $white;
+  color: $dark;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $primary;
+    margin-right: 1rem;
+  }
+
+  .tabs-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+</style>
