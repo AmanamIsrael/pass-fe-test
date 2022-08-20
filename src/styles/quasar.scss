@@ -6,4 +6,10 @@ body {
   font-family: "Inter", sans-serif;
   background-color: $background;
 }
+.m-0 {
+  margin: 0;
+}
+.mb-2 {
+  margin-bottom: 1.2em;
+}
 // @import '~quasar-addon-styl';

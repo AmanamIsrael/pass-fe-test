@@ -1,0 +1,152 @@
+<template>
+  <table>
+    <thead>
+      <tr>
+        <th
+          class="text-grey text-capitalize"
+          v-for="header in tableHeaders"
+          :key="header.id"
+          scope="col"
+        >
+          {{ header.name }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="item Name">
+          <div class="mb-2">
+            <q-input
+              outlined
+              v-model="text"
+              label="Payment Project - Monlight Mobile Design"
+            />
+          </div>
+          <q-input outlined v-model="text" label="Description" />
+        </td>
+        <td data-label="Hours">
+          <q-input outlined v-model="text" label="120" />
+        </td>
+
+        <td data-label="Rate/hr">
+          <q-input outlined v-model="text" label="40.00" />
+        </td>
+        <td data-label="Tax">
+          <q-input outlined v-model="text" label="0.00" />
+        </td>
+        <td data-label="Line Total">
+          <q-input outlined v-model="text" label="4,800.00" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      tableHeaders: [
+        {
+          name: "Item Name",
+          id: 1,
+        },
+        {
+          name: "Hours",
+          id: 2,
+        },
+        {
+          name: "Rate/Hr",
+          id: 3,
+        },
+        {
+          name: "Tax",
+          id: 4,
+        },
+        {
+          name: "Line Total",
+          id: 5,
+        },
+      ],
+    };
+  },
+};
+</script>
+<style lang="scss" scoped>
+table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+table tr {
+  padding: 0.35em;
+}
+
+table th,
+table td {
+  padding: 0.625em;
+  text-align: start;
+}
+
+table th {
+  font-size: 0.85em;
+  border-bottom: 1px solid #ddd;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: flex;
+    flex-direction: column;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+</style>
