@@ -29,10 +29,9 @@ section.body-container {
 
   div.layout {
     background-color: $white;
-    min-height: 750px;
+    min-height: max-content;
     margin-top: 1rem;
-    padding: 0 2rem;
-    padding-top: 1rem;
+    padding: 2rem;
     border-radius: 0.5rem;
   }
 }
