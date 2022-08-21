@@ -3,6 +3,8 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
+      user: {},
+      invoice: {},
       itemDetails: {
         itemName: "",
         itemDescription: "",
@@ -20,6 +22,12 @@ const store = createStore({
     },
     updateLineTotal(state) {
       state.lineTotal = state.itemDetails.hours * state.itemDetails.rate;
+    },
+    setUser(state, payload) {
+      state.user = payload;
+    },
+    setInvoice(state, payload) {
+      state.invoice = payload;
     },
   },
 });
