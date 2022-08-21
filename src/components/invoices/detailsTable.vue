@@ -17,24 +17,52 @@
       <tr>
         <td data-label="item Name">
           <div class="mb-2">
-            <q-input outlined v-model="formData.itemName" />
+            <q-input
+              @change="updateDetails"
+              outlined
+              type="text"
+              v-model.number="formData.itemName"
+            />
           </div>
-          <q-input outlined v-model="formData.itemDescription" />
+          <q-input
+            @change="updateDetails"
+            outlined
+            type="text"
+            v-model.number="formData.itemDescription"
+          />
         </td>
         <td data-label="Hours">
-          <q-input outlined v-model="formData.hours" />
+          <q-input
+            type="text"
+            @change="updateDetails"
+            outlined
+            v-model.number="formData.hours"
+          />
         </td>
 
         <td data-label="Rate/hr">
-          <q-input outlined prefix="$" v-model="formData.rate" />
+          <q-input
+            type="text"
+            @change="updateDetails"
+            outlined
+            prefix="$"
+            v-model.number="formData.rate"
+          />
         </td>
         <td data-label="Tax">
-          <q-input outlined prefix="$" v-model="formData.tax" />
+          <q-input
+            type="text"
+            @change="updateDetails"
+            outlined
+            prefix="$"
+            v-model.number="formData.tax"
+          />
         </td>
         <td data-label="Line Total">
           <q-input
             outlined
-            v-model="formData.lineTotal"
+            readonly
+            v-model="lineTotal"
             type="text"
             prefix="$"
           />
@@ -43,42 +71,46 @@
     </tbody>
   </table>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      tableHeaders: [
-        {
-          name: "Item Name",
-          id: 1,
-        },
-        {
-          name: "Hours",
-          id: 2,
-        },
-        {
-          name: "Rate/Hr",
-          id: 3,
-        },
-        {
-          name: "Tax",
-          id: 4,
-        },
-        {
-          name: "Line Total",
-          id: 5,
-        },
-      ],
-      formData: {
-        itemName: "Payment Project - Monlight Mobile Design",
-        itemDescription: "Description",
-        hours: "120",
-        rate: "40.00",
-        tax: "0.00",
-        lineTotal: "4,800.00",
-      },
-    };
+<script setup>
+import { ref } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore();
+const tableHeaders = [
+  {
+    name: "Item Name",
+    id: 1,
   },
+  {
+    name: "Hours",
+    id: 2,
+  },
+  {
+    name: "Rate/Hr",
+    id: 3,
+  },
+  {
+    name: "Tax",
+    id: 4,
+  },
+  {
+    name: "Line Total",
+    id: 5,
+  },
+];
+const formData = ref({
+  itemName: "Payment Project - Monlight Mobile Design",
+  itemDescription: "Description",
+  hours: 120,
+  rate: 40,
+  tax: 30,
+});
+const lineTotal = ref(0);
+
+const updateDetails = () => {
+  store.commit("updateItemDetails", formData.value);
+  store.commit("updateLineTotal");
+  lineTotal.value = parseFloat(store.state.lineTotal).toFixed(2);
 };
 </script>
 <style lang="scss" scoped>
