@@ -17,26 +17,27 @@
       <tr>
         <td data-label="item Name">
           <div class="mb-2">
-            <q-input
-              outlined
-              v-model="text"
-              label="Payment Project - Monlight Mobile Design"
-            />
+            <q-input outlined v-model="formData.itemName" />
           </div>
-          <q-input outlined v-model="text" label="Description" />
+          <q-input outlined v-model="formData.itemDescription" />
         </td>
         <td data-label="Hours">
-          <q-input outlined v-model="text" label="120" />
+          <q-input outlined v-model="formData.hours" />
         </td>
 
         <td data-label="Rate/hr">
-          <q-input outlined v-model="text" label="40.00" />
+          <q-input outlined prefix="$" v-model="formData.rate" />
         </td>
         <td data-label="Tax">
-          <q-input outlined v-model="text" label="0.00" />
+          <q-input outlined prefix="$" v-model="formData.tax" />
         </td>
         <td data-label="Line Total">
-          <q-input outlined v-model="text" label="4,800.00" />
+          <q-input
+            outlined
+            v-model="formData.lineTotal"
+            type="text"
+            prefix="$"
+          />
         </td>
       </tr>
     </tbody>
@@ -68,6 +69,14 @@ export default {
           id: 5,
         },
       ],
+      formData: {
+        itemName: "Payment Project - Monlight Mobile Design",
+        itemDescription: "Description",
+        hours: "120",
+        rate: "40.00",
+        tax: "0.00",
+        lineTotal: "4,800.00",
+      },
     };
   },
 };
