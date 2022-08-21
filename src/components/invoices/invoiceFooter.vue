@@ -37,39 +37,39 @@
         <div class="row summary">
           <p class="m-0">Sub Total</p>
           <q-space />
-          <p class="m-0">$4,800.00</p>
+          <p class="m-0">${{ store.state?.lineTotal }}</p>
         </div>
         <div class="row summary">
           <p class="m-0 text-grey">Discount</p>
           <q-space />
-          <p class="m-0">$0.00</p>
+          <p class="m-0">${{ store.state?.discount }}</p>
         </div>
         <div class="row summary mb-3">
           <p class="m-0 text-grey">Total Tax</p>
           <q-space />
-          <p class="m-0">$0.00</p>
+          <p class="m-0">${{ store.state.itemDetails?.tax }}</p>
         </div>
         <q-separator />
         <div class="row total mb-3">
           <p class="m-0 text-grey">Total Amount</p>
           <q-space />
-          <p class="m-0">$4.800.00</p>
+          <p class="m-0">
+            ${{ store.state?.lineTotal + store.state?.itemDetails?.tax }}
+          </p>
         </div>
       </div>
     </div>
   </section>
 </template>
-<script>
-export default {
-  data() {
-    return {
-      accountData: {
-        accountName: "Barly Vallendito",
-        accountNumber: "9700 0023 4200 2900",
-        bank: "084009519",
-      },
-    };
-  },
+<script setup>
+import { useStore } from "vuex";
+
+const store = useStore();
+
+const accountData = {
+  accountName: "Barly Vallendito",
+  accountNumber: "9700 0023 4200 2900",
+  bank: "084009519",
 };
 </script>
 <style scoped lang="scss">

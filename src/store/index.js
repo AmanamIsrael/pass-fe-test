@@ -6,11 +6,12 @@ const store = createStore({
       itemDetails: {
         itemName: "",
         itemDescription: "",
-        hours: 0,
-        rate: 0,
-        tax: 0,
+        hours: 120,
+        rate: 40,
+        tax: 30,
       },
       lineTotal: 0,
+      discount: 0,
     };
   },
   mutations: {

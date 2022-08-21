@@ -72,7 +72,7 @@
   </table>
 </template>
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
@@ -98,6 +98,10 @@ const tableHeaders = [
     id: 5,
   },
 ];
+
+onMounted(() => {
+  store.commit("updateLineTotal");
+});
 const formData = ref({
   itemName: "Payment Project - Monlight Mobile Design",
   itemDescription: "Description",
@@ -105,7 +109,7 @@ const formData = ref({
   rate: 40,
   tax: 30,
 });
-const lineTotal = ref(0);
+const lineTotal = ref(store.state?.lineTotal);
 
 const updateDetails = () => {
   store.commit("updateItemDetails", formData.value);
