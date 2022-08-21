@@ -33,7 +33,10 @@ const store = useStore();
   min-height: max-content;
   background-color: rgb(77, 75, 166, 0.9);
 }
-.column {
-  text-align: left;
+
+@media (max-width: 768px) {
+  .column {
+    text-align: left;
+  }
 }
 </style>
