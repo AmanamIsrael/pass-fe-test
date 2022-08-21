@@ -35,6 +35,13 @@ section.body-container {
     border-radius: 0.5rem;
   }
 }
+
+// Media queries
+@media (max-width: 768px) {
+  div.layout {
+    padding: 1rem !important;
+  }
+}
 q-layout {
   min-height: auto;
 }

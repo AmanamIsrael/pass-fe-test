@@ -196,4 +196,11 @@ table {
     border-bottom: 0;
   }
 }
+// Media queries
+@media (max-width: 768px) {
+  table td::before {
+    float: none;
+    margin-bottom: 1rem;
+  }
+}
 </style>

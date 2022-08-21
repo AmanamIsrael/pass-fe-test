@@ -1,7 +1,7 @@
 <template lang="">
   <section>
     <div class="row">
-      <div>
+      <div class="w-100">
         <div class="row">
           <b class="m-0">Payment Method</b>
           <q-space />
@@ -33,8 +33,8 @@
         </q-card>
       </div>
 
-      <q-space />
-      <div class="summary-container">
+      <q-space class="middle-space" />
+      <div class="summary-container w-100">
         <div class="row summary">
           <p class="m-0">Sub Total</p>
           <q-space />
@@ -103,5 +103,14 @@ section {
 .summary-container {
   min-width: 350px;
   max-width: 100%;
+}
+// Media queries
+@media (max-width: 768px) {
+  .q-card__section {
+    padding: 1rem 0;
+  }
+  .q-space.middle-space {
+    display: none;
+  }
 }
 </style>

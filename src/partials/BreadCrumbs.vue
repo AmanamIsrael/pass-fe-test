@@ -22,4 +22,11 @@ export default {};
     color: $dark;
   }
 }
+
+// Media queries
+@media (max-width: 768px) {
+  .breadcrumbs {
+    margin-left: 1rem;
+  }
+}
 </style>

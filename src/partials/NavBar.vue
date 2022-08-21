@@ -1,15 +1,14 @@
 <template>
   <nav>
     <section>
-      <div class="logo">Payday.</div>
-      <div class="tabs-container">
+      <div class="logo">Paypay.</div>
+      <div class="tabs-container q-gutter-y-md">
         <q-tabs
           inline-label
           v-model="tab"
           no-caps
           indicator-color="primary"
-          outside-arrows
-          mobile-arrows
+          inside-arrows
           active-color="primary"
         >
           <q-route-tab
@@ -63,6 +62,13 @@ nav {
   background-color: $white;
   color: $dark;
   padding: 1rem;
+
+  // Media queries
+  @media (max-width: 768px) {
+    .q-tabs {
+      max-width: 200px;
+    }
+  }
 
   section {
     max-width: 1000px;
