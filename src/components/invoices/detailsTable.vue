@@ -7,6 +7,7 @@
           v-for="header in tableHeaders"
           :key="header.id"
           scope="col"
+          :width="header.id === 1 ? '50%' : 'auto'"
         >
           {{ header.name }}
         </th>
@@ -78,27 +79,28 @@ table {
   padding: 0;
   width: 100%;
   table-layout: fixed;
+
+  tr {
+    padding: 0.35em;
+  }
+
+  th,
+  td {
+    padding: 0.625em;
+    text-align: start;
+    vertical-align: baseline;
+  }
+
+  th {
+    font-size: 0.85em;
+    border-bottom: 1px solid #ddd;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
 }
 
 .text-capitalize {
   text-transform: capitalize;
-}
-
-table tr {
-  padding: 0.35em;
-}
-
-table th,
-table td {
-  padding: 0.625em;
-  text-align: start;
-}
-
-table th {
-  font-size: 0.85em;
-  border-bottom: 1px solid #ddd;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
 @media screen and (max-width: 600px) {

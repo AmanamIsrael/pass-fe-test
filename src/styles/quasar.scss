@@ -12,4 +12,7 @@ body {
 .mb-2 {
   margin-bottom: 1.2em;
 }
+.q-field--outlined .q-field__control {
+  border-radius: 1rem;
+}
 // @import '~quasar-addon-styl';
