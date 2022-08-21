@@ -13,7 +13,7 @@
   </div>
 </template>
 <script>
-import DetailsTable from "./detailsTable.vue";
+import DetailsTable from "./DetailsTable.vue";
 export default {
   components: {
     DetailsTable,

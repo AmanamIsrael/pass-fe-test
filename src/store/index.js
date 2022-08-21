@@ -3,8 +3,32 @@ import { createStore } from "vuex";
 const store = createStore({
   state() {
     return {
-      user: {},
-      invoice: {},
+      user: {
+        name: "Amanam Israel",
+        email: "hello@amanamisrael.com",
+        address: {
+          street: "jen Boulevard Street 101",
+          city: "Malang City, 65115",
+          country: "East Java, Indonesia",
+        },
+        payment: {
+          accountName: "Barly Vallendito",
+          accountNumber: "9700 0023 4200 2900",
+          routingNumber: "084009519",
+        },
+      },
+      invoice: {
+        number: "INV-001",
+        issuedDate: "2020-01-01",
+        dueDate: "2020-01-08",
+        billedTo: {
+          name: "Zaky Grizzly",
+          address: {
+            street: "Monlight Agency LTD",
+            city: "New York, USA",
+          },
+        },
+      },
       itemDetails: {
         itemName: "",
         itemDescription: "",

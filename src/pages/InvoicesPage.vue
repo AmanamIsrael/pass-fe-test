@@ -13,9 +13,9 @@
 </template>
 <script setup>
 import InvoiceInfo from "@/components/invoices/InvoiceInfo.vue";
-import InvoiceCard from "../components/invoices/invoiceCard.vue";
-import ItemDetail from "../components/invoices/itemDetail.vue";
-import InvoiceFooter from "@/components/invoices/invoiceFooter.vue";
+import InvoiceCard from "../components/invoices/InvoiceCard.vue";
+import ItemDetail from "../components/invoices/ItemDetail.vue";
+import InvoiceFooter from "@/components/invoices/InvoiceFooter.vue";
 import { onMounted, ref } from "vue";
 import { useStore } from "vuex";
 
@@ -23,7 +23,9 @@ const store = useStore();
 const isLoading = ref(false);
 
 onMounted(() => {
-  getUsers();
+  if (process.env.NODE_ENV === "development") {
+    getUsers();
+  }
 });
 
 const getUsers = async () => {
