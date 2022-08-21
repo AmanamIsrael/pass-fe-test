@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import Navbar from "@/partials/NavBar.vue";
-import BreadCrumbs from "@/partials/BreadCrumbs.vue";
+import Navbar from "@/components/partials/NavBar.vue";
+import BreadCrumbs from "@/components/partials/BreadCrumbs.vue";
 export default {
   name: "DashboardLayout",
   components: { Navbar, BreadCrumbs },
