@@ -198,9 +198,15 @@ table {
 }
 // Media queries
 @media (max-width: 768px) {
-  table td::before {
-    float: none;
-    margin-bottom: 1rem;
+  table {
+    td {
+      padding: 1rem 0.625rem;
+
+      &::before {
+        float: none;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }
 </style>

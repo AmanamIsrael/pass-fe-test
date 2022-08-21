@@ -55,8 +55,8 @@ const getInvoices = async () => {
 </script>
 <style lang="scss">
 .loading-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
+  height: 70vh;
 }
 </style>
