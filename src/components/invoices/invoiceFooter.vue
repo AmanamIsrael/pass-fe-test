@@ -106,6 +106,9 @@ section {
 }
 // Media queries
 @media (max-width: 768px) {
+  .w-100 {
+    width: 100%;
+  }
   .q-card__section {
     padding: 1rem 0;
   }
