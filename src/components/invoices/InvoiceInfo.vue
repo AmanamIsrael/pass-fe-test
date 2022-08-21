@@ -1,7 +1,9 @@
 <template lang="">
   <div class="row no-wrap items-center q-mt-md">
     <div class="row items-center">
-      <q-avatar color="primary" class="q-mr-md" text-color="white">X</q-avatar>
+      <q-avatar color="primary" class="q-mr-md" text-color="white">{{
+        store.state?.user?.name?.split(" ")[0][0]
+      }}</q-avatar>
       <div class="column vertical-middle">
         <b class="text-primary">{{ store.state?.user?.name }}</b>
         <p class="text-grey email">{{ store.state?.user?.email }}</p>
