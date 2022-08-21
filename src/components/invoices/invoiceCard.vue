@@ -4,23 +4,25 @@
       <section class="row items-center">
         <div class="column vertical-middle">
           <p><b>Invoice Number</b></p>
-          <p>INV-2022-010</p>
-          <p>Issued Date: 11 jan 2022</p>
+          <p>{{ store.state?.invoice?.number }}</p>
+          <p>Issued Date: {{ store.state?.invoice?.number }}</p>
           <p>Due Date: 18 jan 2022</p>
         </div>
         <q-space />
         <div class="column text-right vertical-middle">
           <p><b>Billed To</b></p>
-          <p>Zaky Grizzly</p>
-          <p>Monlight Agency LTD</p>
-          <p>New York, USA</p>
+          <p>{{ store.state?.invoice?.billedTo?.name }}</p>
+          <p>{{ store.state?.invoice?.billedTo?.address?.street }}</p>
+          <p>{{ store.state?.invoice?.billedTo?.address?.city }}</p>
         </div>
       </section>
     </q-card-section>
   </q-card>
 </template>
-<script>
-export default {};
+<script setup>
+import { useStore } from "vuex";
+
+const store = useStore();
 </script>
 <style lang=""></style>
 <style scoped lang="scss">
