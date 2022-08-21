@@ -33,6 +33,12 @@ const router = createRouter({
       title: "Wallet",
       component: () => import("@/pages/WalletPage.vue"),
     },
+    {
+      path: "/*",
+      name: "PageNotFound",
+      title: "PageNotFound",
+      component: () => import("@/pages/PageNotFound.vue"),
+    },
   ],
 });
 
